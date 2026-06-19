@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0017c1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"
+    />
+    <meta
+      name="description"
+      content="スマホ料金やサブスクのムダを見つける、くらしDXサポートのデジタル家計診断。"
+    />
+    <title>くらしDXサポート｜デジタル家計診断</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="メインメニュー">
+        <a class="brand" href="#home" aria-label="くらしDXサポート ホーム">
+          <span class="brand-mark" aria-hidden="true">く</span>
+          <span>
+            <strong>くらしDX</strong>
+            <small>サポート</small>
+          </span>
+        </a>
+
+        <nav class="side-nav">
+          <a class="nav-item is-active" href="#home" data-view-link="home">
+            <img aria-hidden="true" src="./assets/icons/house_line.svg" alt="" />
+            ホーム
+          </a>
+          <button class="nav-item" type="button" data-action="start-diagnosis">
+            <img aria-hidden="true" src="./assets/icons/money_fill.svg" alt="" />
+            家計を診断
+          </button>
+          <a class="nav-item" href="#ledger" data-view-link="ledger">
+            <img aria-hidden="true" src="./assets/icons/history_line.svg" alt="" />
+            節約の記録
+          </a>
+          <a class="nav-item" href="#support" data-view-link="support">
+            <img aria-hidden="true" src="./assets/icons/help_line.svg" alt="" />
+            相談する
+          </a>
+          <a class="nav-item" href="#security" data-view-link="security">
+            <img aria-hidden="true" src="./assets/icons/privacy_protection_line.svg" alt="" />
+            安全と個人情報
+          </a>
+        </nav>
+
+        <div class="sidebar-support">
+          <span class="support-icon" aria-hidden="true">☎</span>
+          <p>操作に迷いましたか？</p>
+          <strong>0120-123-889</strong>
+          <small>受付 9:00〜18:00</small>
+        </div>
+
+        <div class="profile-chip">
+          <span class="avatar" aria-hidden="true">利</span>
+          <span><strong>利用者さま</strong><small>デモモード</small></span>
+          <button aria-label="アカウントメニュー" type="button">⋯</button>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-content">
+        <header class="mobile-header">
+          <a class="brand" href="#home"><span class="brand-mark">く</span><strong>くらしDX</strong></a>
+          <button class="phone-button" type="button" data-action="open-contact" aria-label="電話で相談する">☎</button>
+        </header>
+
+        <section id="home-view" class="view is-visible" aria-labelledby="welcome-title">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow">くらしDXサポート</p>
+              <h1 id="welcome-title">デジタルの「もったいない」を<br />一緒になくしましょう。</h1>
+            </div>
+            <button class="button button-secondary header-cta" type="button" data-action="open-contact">
+              <img aria-hidden="true" src="./assets/icons/specialist_line.svg" alt="" />
+              スタッフに相談
+            </button>
+          </div>
+
+          <section class="savings-hero" aria-labelledby="savings-title">
+            <div class="hero-copy">
+              <span class="status-pill"><span></span> 無料・約3分</span>
+              <h2 id="savings-title">見直しで、年間</h2>
+              <p class="savings-amount"><strong id="hero-saving">46,800</strong><span>円</span></p>
+              <p>節約できる可能性があります</p>
+              <button class="button button-light" type="button" data-action="start-diagnosis">
+                3分で家計を診断する
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="hero-visual">
+              <img src="./assets/illustrations/support-family.png" alt="家族と支援員が一緒に相談しているイラスト" />
+            </div>
+          </section>
+
+          <section class="local-processing-banner" aria-labelledby="local-processing-title">
+            <img src="./assets/icons/privacy_protection_line.svg" alt="" aria-hidden="true" />
+            <div>
+              <h2 id="local-processing-title">入力内容は、この端末の中だけで計算します</h2>
+              <p>診断内容・電話番号は外部へ送信せず、ブラウザを閉じると消去されます。</p>
+            </div>
+            <button class="text-link" type="button" data-view-link-button="security">安全への取り組みを見る</button>
+          </section>
+
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">まずはここから</p>
+              <h2>どんなことが気になりますか？</h2>
+            </div>
+            <p>わからなくても大丈夫。選ぶだけで始められます。</p>
+          </div>
+
+          <div class="service-grid">
+            <button class="service-card" type="button" data-service="phone">
+              <span class="service-icon">
+                <img aria-hidden="true" src="./assets/icons/smartphone_line.svg" alt="" />
+              </span>
+              <span class="service-copy">
+                <span class="card-label">人気 No.1</span>
+                <strong>スマホ料金診断</strong>
+                <small>今の使い方に合う料金プランを探します</small>
+              </span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="service-card" type="button" data-service="subscription">
+              <span class="service-icon">
+                <img aria-hidden="true" src="./assets/icons/transactions_line.svg" alt="" />
+              </span>
+              <span class="service-copy">
+                <strong>サブスク診断</strong>
+                <small>使っていない月額サービスを整理します</small>
+              </span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="service-card" type="button" data-service="ai">
+              <span class="service-icon">
+                <img aria-hidden="true" src="./assets/icons/specialist_line.svg" alt="" />
+              </span>
+              <span class="service-copy">
+                <strong>AI活用相談</strong>
+                <small>便利なAIをあなたのペースで学べます</small>
+              </span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="service-card" type="button" data-service="trouble">
+              <span class="service-icon">
+                <img aria-hidden="true" src="./assets/icons/personal_computer_line.svg" alt="" />
+              </span>
+              <span class="service-copy">
+                <strong>スマホ・PC相談</strong>
+                <small>設定や不具合など、何でもご相談ください</small>
+              </span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <section class="ledger-preview" aria-labelledby="ledger-preview-title">
+            <div class="ledger-summary">
+              <span class="section-icon" aria-hidden="true">¥</span>
+              <div>
+                <p class="eyebrow">デジタル家計簿</p>
+                <h2 id="ledger-preview-title">見直しの効果をひと目で</h2>
+                <p>この1年で見つけた節約額を記録しています。</p>
+              </div>
+              <div class="total-saving">
+                <span>累計の節約額</span>
+                <strong>¥78,400</strong>
+              </div>
+            </div>
+            <div class="saving-items">
+              <div><span class="item-dot">携</span><p>スマホ料金<small>2026年5月 見直し</small></p><strong>¥18,000<small>/ 年</small></strong></div>
+              <div><span class="item-dot">サ</span><p>サブスク<small>3サービスを整理</small></p><strong>¥12,000<small>/ 年</small></strong></div>
+              <div><span class="item-dot">電</span><p>電気料金<small>料金プランを変更</small></p><strong>¥8,400<small>/ 年</small></strong></div>
+              <div><span class="item-dot">保</span><p>保険料<small>重複補償を整理</small></p><strong>¥40,000<small>/ 年</small></strong></div>
+            </div>
+            <button class="text-link" type="button" data-view-link-button="ledger">すべての記録を見る <span>→</span></button>
+          </section>
+
+          <section class="trust-strip" aria-label="サービスの特徴">
+            <div><span>✓</span><p><strong>無理な勧誘なし</strong><small>必要なものだけをご提案</small></p></div>
+            <div><span>人</span><p><strong>担当者が直接対応</strong><small>機械ではなく人が寄り添います</small></p></div>
+            <div><span><img src="./assets/icons/privacy_protection_line.svg" alt="" /></span><p><strong>個人情報を最小限に</strong><small>診断内容は保存・送信しません</small></p></div>
+          </section>
+        </section>
+
+        <section id="diagnosis-view" class="view diagnosis-view" aria-labelledby="diagnosis-title">
+          <button class="back-link" type="button" data-action="back-home">← ホームに戻る</button>
+          <div class="diagnosis-layout">
+            <div class="diagnosis-main">
+              <div class="step-header">
+                <p class="eyebrow">デジタル家計診断</p>
+                <h1 id="diagnosis-title">いまのデジタル家計を確認しましょう</h1>
+                <p>わかる範囲で大丈夫です。約3分で結果がわかります。</p>
+              </div>
+              <div class="stepper" aria-label="診断の進み具合">
+                <span class="step is-current" data-step-indicator="1"><b>1</b><small>気になること</small></span>
+                <i></i>
+                <span class="step" data-step-indicator="2"><b>2</b><small>料金の確認</small></span>
+                <i></i>
+                <span class="step" data-step-indicator="3"><b>3</b><small>診断結果</small></span>
+              </div>
+
+              <form id="diagnosis-form" novalidate>
+                <fieldset class="form-step is-active" data-step="1">
+                  <legend>気になる項目をすべて選んでください</legend>
+                  <p class="field-help">あとから変更できます。</p>
+                  <div class="choice-grid">
+                    <label class="choice-card"><input type="checkbox" name="concerns" value="phone" checked /><span class="checkmark">✓</span><span class="choice-icon">携</span><strong>スマホ料金</strong><small>毎月の通信料金を安くしたい</small></label>
+                    <label class="choice-card"><input type="checkbox" name="concerns" value="subscription" checked /><span class="checkmark">✓</span><span class="choice-icon">サ</span><strong>サブスク</strong><small>使っていない契約を整理したい</small></label>
+                    <label class="choice-card"><input type="checkbox" name="concerns" value="ai" /><span class="checkmark">✓</span><span class="choice-icon">AI</span><strong>AIの使い方</strong><small>暮らしに役立つ使い方を知りたい</small></label>
+                    <label class="choice-card"><input type="checkbox" name="concerns" value="trouble" /><span class="checkmark">✓</span><span class="choice-icon">?</span><strong>スマホ・PC</strong><small>動作や設定の困りごとがある</small></label>
+                  </div>
+                  <div class="form-actions"><span></span><button class="button button-primary" type="button" data-action="next-step">料金の確認へ <span>→</span></button></div>
+                </fieldset>
+
+                <fieldset class="form-step" data-step="2">
+                  <legend>毎月の支払いを教えてください</legend>
+                  <p class="field-help">だいたいの金額でも診断できます。</p>
+                  <div class="input-section">
+                    <div class="input-section-title"><span class="choice-icon">携</span><div><strong>スマホ料金</strong><small>ご家族分を含めた月額</small></div></div>
+                    <div class="field-row">
+                      <label>契約している会社<select id="carrier" name="carrier"><option value="major">大手キャリア</option><option value="sub">サブブランド</option><option value="mvno">格安SIM</option><option value="unknown">わからない</option></select></label>
+                      <label>毎月の支払額<span class="money-input"><input id="phone-cost" name="phoneCost" type="number" min="0" max="100000" value="9800" inputmode="numeric" /><span>円</span></span></label>
+                    </div>
+                  </div>
+                  <div class="input-section">
+                    <div class="input-section-title"><span class="choice-icon">サ</span><div><strong>サブスク</strong><small>現在利用しているものを選択</small></div></div>
+                    <div class="subscription-list" id="subscription-list">
+                      <label><input type="checkbox" value="1490" checked /><span class="service-badge">N</span><span><strong>Netflix</strong><small>動画</small></span><b>1,490円/月</b></label>
+                      <label><input type="checkbox" value="980" checked /><span class="service-badge">S</span><span><strong>Spotify</strong><small>音楽</small></span><b>980円/月</b></label>
+                      <label><input type="checkbox" value="1500" checked /><span class="service-badge">D</span><span><strong>Dropbox</strong><small>データ保存</small></span><b>1,500円/月</b></label>
+                      <label><input type="checkbox" value="3000" /><span class="service-badge">AI</span><span><strong>ChatGPT</strong><small>AI</small></span><b>3,000円/月</b></label>
+                      <label><input type="checkbox" value="600" /><span class="service-badge">A</span><span><strong>Amazon Prime</strong><small>買い物・動画</small></span><b>600円/月</b></label>
+                    </div>
+                  </div>
+                  <div class="form-actions"><button class="button button-secondary" type="button" data-action="prev-step">← 戻る</button><button class="button button-primary" type="submit">診断結果を見る <span>→</span></button></div>
+                </fieldset>
+
+                <section class="form-step result-step" data-step="3" aria-live="polite">
+                  <div class="result-check" aria-hidden="true">✓</div>
+                  <p class="eyebrow">診断が完了しました</p>
+                  <h2>年間 <strong id="result-saving">46,800</strong>円<br />節約できる可能性があります</h2>
+                  <p>毎月にすると約 <strong id="monthly-saving">3,900</strong>円。無理なく見直せる項目が見つかりました。</p>
+                  <div class="result-breakdown">
+                    <div><span class="choice-icon">携</span><p><strong>スマホ料金の見直し</strong><small id="phone-advice">サブブランドへの変更を検討</small></p><b id="phone-saving">¥34,800<small>/ 年</small></b></div>
+                    <div><span class="choice-icon">サ</span><p><strong>サブスクの整理</strong><small id="sub-advice">利用頻度の低いサービスを1件整理</small></p><b id="sub-saving">¥12,000<small>/ 年</small></b></div>
+                  </div>
+                  <div class="result-note"><span>!</span><p><strong>契約変更はスタッフがお手伝いできます</strong><small>内容をご説明し、同意なく変更することはありません。</small></p></div>
+                  <div class="result-actions"><button class="button button-secondary" type="button" data-action="print-report">診断レポートを保存</button><button class="button button-primary" type="button" data-action="open-contact">無料相談を予約する <span>→</span></button></div>
+                  <button class="text-link restart-link" type="button" data-action="restart-diagnosis">もう一度診断する</button>
+                </section>
+              </form>
+            </div>
+            <aside class="diagnosis-aside">
+              <div class="advisor-card">
+                <div class="advisor-avatar">佐</div>
+                <span class="online-dot" aria-label="対応可能"></span>
+                <p class="eyebrow">担当アドバイザー</p>
+                <h3>佐藤 みどり</h3>
+                <p>わからない項目は空欄でも大丈夫です。診断後に一緒に確認しましょう。</p>
+                <button class="text-link" type="button" data-action="open-contact">途中で質問する →</button>
+              </div>
+              <div class="privacy-card"><img src="./assets/icons/privacy_protection_line.svg" alt="" /><p><strong>端末内だけで診断</strong><small>診断内容は保存せず、外部にも送信しません。</small></p></div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="ledger-view" class="view subpage-view" aria-labelledby="ledger-title">
+          <button class="back-link" type="button" data-action="back-home">← ホームに戻る</button>
+          <div class="page-header"><div><p class="eyebrow">デジタル家計簿</p><h1 id="ledger-title">節約の記録</h1><p>見直しの成果を、わかりやすく積み上げています。</p></div><button class="button button-primary" type="button" data-action="start-diagnosis">新しく診断する</button></div>
+          <div class="ledger-dashboard">
+            <section class="annual-total"><p>今年の年間節約額</p><strong>¥78,400</strong><small>昨年より <b>+¥21,600</b></small><div class="annual-bars" aria-label="月別の節約記録"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="month-labels"><span>1月</span><span>6月</span><span>12月</span></div></section>
+            <section class="category-total"><h2>項目別の節約</h2><div class="donut" aria-label="スマホ23%、サブスク15%、電気11%、保険51%"><span>4項目</span></div><ul><li><i></i>保険 <b>¥40,000</b></li><li><i></i>スマホ <b>¥18,000</b></li><li><i></i>サブスク <b>¥12,000</b></li><li><i></i>電気 <b>¥8,400</b></li></ul></section>
+          </div>
+          <section class="history-card"><div class="section-heading"><div><p class="eyebrow">見直し履歴</p><h2>これまでの記録</h2></div><button class="button button-secondary" type="button" data-action="print-report">レポートを保存</button></div><div class="history-table"><div class="history-head"><span>項目</span><span>見直した内容</span><span>実施日</span><span>年間節約額</span></div><div><span><i class="item-dot">携</i><b>スマホ料金</b></span><span>料金プランを変更</span><span>2026/05/18</span><strong>¥18,000</strong></div><div><span><i class="item-dot">サ</i><b>サブスク</b></span><span>3サービスを整理</span><span>2026/04/02</span><strong>¥12,000</strong></div><div><span><i class="item-dot">電</i><b>電気料金</b></span><span>料金プランを変更</span><span>2026/02/14</span><strong>¥8,400</strong></div><div><span><i class="item-dot">保</i><b>保険料</b></span><span>重複補償を整理</span><span>2026/01/20</span><strong>¥40,000</strong></div></div></section>
+        </section>
+
+        <section id="support-view" class="view subpage-view" aria-labelledby="support-title">
+          <button class="back-link" type="button" data-action="back-home">← ホームに戻る</button>
+          <div class="support-page-header"><p class="eyebrow">ひとりで悩まなくて大丈夫</p><h1 id="support-title">どんな小さなことでも<br />ご相談ください。</h1><p>専門用語を使わず、できるまでゆっくりご案内します。</p></div>
+          <div class="contact-options">
+            <button type="button" data-action="call"><span>☎</span><strong>電話で相談</strong><small>いま話したい方へ</small><b>0120-123-889</b><em>受付 9:00〜18:00</em></button>
+            <button type="button" data-action="open-contact"><span>予</span><strong>相談を予約</strong><small>ご都合のよい日時に</small><b>来店・訪問・電話</b><em>24時間受付</em></button>
+            <button type="button" data-action="line"><span>ラ</span><strong>LINEで相談</strong><small>写真を送って相談できます</small><b>友だち追加</b><em>返信目安 30分以内</em></button>
+          </div>
+          <section class="support-topics"><div class="section-heading"><div><p class="eyebrow">よくあるご相談</p><h2>こんなこともお任せください</h2></div></div><div class="topic-grid"><div><span>Wi</span><strong>Wi-Fi診断</strong><small>遅さやつながりにくさを確認</small></div><div><span>線</span><strong>LINE整理</strong><small>引き継ぎやバックアップ</small></div><div><span>写</span><strong>写真整理</strong><small>GoogleフォトやiCloud</small></div><div><span>盾</span><strong>詐欺相談</strong><small>怪しいSMSやメールを判定</small></div><div><span>PC</span><strong>PC健康診断</strong><small>動作や容量をチェック</small></div><div><span>鍵</span><strong>パスワード整理</strong><small>安全な保管方法をご案内</small></div></div></section>
+        </section>
+
+        <section id="security-view" class="view subpage-view security-view" aria-labelledby="security-title">
+          <button class="back-link" type="button" data-action="back-home">← ホームに戻る</button>
+          <header class="security-header">
+            <div>
+              <p class="eyebrow">安全と個人情報</p>
+              <h1 id="security-title">お客様の情報を、<br />必要以上に持たない。</h1>
+              <p>便利さより先に、データの最小化・透明性・ご本人の選択を守ります。</p>
+            </div>
+            <img src="./assets/illustrations/digital-payment.png" alt="スマートフォンとカードを持つ人のイラスト" />
+          </header>
+
+          <section class="security-status" aria-labelledby="demo-security-title">
+            <img src="./assets/icons/complete_fill.svg" alt="" aria-hidden="true" />
+            <div><p class="eyebrow">現在のデモ環境</p><h2 id="demo-security-title">外部送信なし・永続保存なし</h2><p>診断はブラウザ内で完結します。入力した料金・契約・電話番号はサーバーへ送信されません。</p></div>
+          </section>
+
+          <section class="security-section" aria-labelledby="data-policy-title">
+            <div class="section-heading"><div><p class="eyebrow">データ分類</p><h2 id="data-policy-title">取り扱う情報とルール</h2></div><p>目的と保存期間を先に決め、不要なデータは取得しません。</p></div>
+            <div class="data-policy-grid">
+              <article><span class="security-level level-safe">端末内のみ</span><h3>診断データ</h3><p>料金・契約中サービス</p><dl><div><dt>利用目的</dt><dd>節約額の計算</dd></div><div><dt>送信</dt><dd>しません</dd></div><div><dt>保存</dt><dd>しません</dd></div></dl></article>
+              <article><span class="security-level level-care">要配慮</span><h3>連絡先</h3><p>相談予約の電話番号</p><dl><div><dt>このデモ</dt><dd>送信・保存なし</dd></div><div><dt>本番環境</dt><dd>暗号化・30日で削除</dd></div><div><dt>閲覧権限</dt><dd>担当者のみ</dd></div></dl></article>
+              <article><span class="security-level level-stop">入力禁止</span><h3>機密情報</h3><p>パスワード・暗証番号・本人確認書類</p><dl><div><dt>取得</dt><dd>しません</dd></div><div><dt>AI入力</dt><dd>禁止</dd></div><div><dt>誤入力時</dt><dd>即時削除・報告</dd></div></dl></article>
+            </div>
+          </section>
+
+          <section class="security-section" aria-labelledby="governance-title">
+            <div class="section-heading"><div><p class="eyebrow">ガバナンス</p><h2 id="governance-title">6つの安全管理</h2></div><p>設計・運用・事故対応まで、継続して点検します。</p></div>
+            <div class="governance-grid">
+              <article><img src="./assets/icons/fast_track_line.svg" alt="" /><div><b>01</b><h3>利用サービスの承認</h3><p>AI・外部サービスは規約、学習利用、保存先を審査してから利用します。</p></div></article>
+              <article><img src="./assets/icons/privacy_protection_line.svg" alt="" /><div><b>02</b><h3>データ分類と最小化</h3><p>扱える情報・扱えない情報を明示し、目的外利用を禁止します。</p></div></article>
+              <article><img src="./assets/icons/authentication_line.svg" alt="" /><div><b>03</b><h3>認証と最小権限</h3><p>本番環境はMFA、役割別権限、定期的なアクセス棚卸しを必須とします。</p></div></article>
+              <article><img src="./assets/icons/history_line.svg" alt="" /><div><b>04</b><h3>監査可能性</h3><p>誰が・いつ・何を扱ったかを改ざん耐性のある監査ログに残します。</p></div></article>
+              <article><img src="./assets/icons/attention_fill.svg" alt="" /><div><b>05</b><h3>リスク評価</h3><p>プライバシー、誤情報、権利侵害、攻撃リスクをリリース前に審査します。</p></div></article>
+              <article><img src="./assets/icons/notification_line.svg" alt="" /><div><b>06</b><h3>インシデント対応</h3><p>検知・封じ込め・通知・復旧・再発防止を責任者と期限つきで実行します。</p></div></article>
+            </div>
+          </section>
+
+          <section class="incident-section" aria-labelledby="incident-title">
+            <p class="eyebrow">もしものとき</p><h2 id="incident-title">情報漏えいが疑われる場合</h2>
+            <ol><li><b>1</b><span><strong>受付・一次対応</strong><small>利用を止め、security@example.jp へ直ちに連絡</small></span></li><li><b>2</b><span><strong>影響確認・封じ込め</strong><small>対象データ、利用者、経路を特定してアクセスを遮断</small></span></li><li><b>3</b><span><strong>通知・復旧・再発防止</strong><small>法令と契約に基づき関係者へ通知し、是正を追跡</small></span></li></ol>
+            <p class="incident-note">※ 連絡先はデモ表記です。本番公開前に実在する責任部署と24時間連絡経路を設定します。</p>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="モバイルメニュー">
+      <a class="is-active" href="#home" data-view-link="home"><span>⌂</span>ホーム</a>
+      <button type="button" data-action="start-diagnosis"><span>✓</span>診断</button>
+      <a href="#ledger" data-view-link="ledger"><span>▥</span>記録</a>
+      <a href="#support" data-view-link="support"><span>◌</span>相談</a>
+      <a href="#security" data-view-link="security"><span>盾</span>安全</a>
+    </nav>
+
+    <dialog id="contact-dialog" class="contact-dialog">
+      <form method="dialog" class="dialog-card" id="contact-form">
+        <button class="dialog-close" value="cancel" aria-label="閉じる">×</button>
+        <span class="dialog-icon">予</span>
+        <p class="eyebrow">無料相談のご予約</p>
+        <h2>ご希望の相談方法を<br />教えてください</h2>
+        <p>このデモでは入力内容を外部へ送信・保存しません。</p>
+        <label>相談方法<select id="contact-method"><option>電話相談</option><option>ご自宅へ訪問</option><option>店舗で相談</option></select></label>
+        <label>希望する時間帯<select id="contact-time"><option>午前（9:00〜12:00）</option><option>午後（12:00〜15:00）</option><option>夕方（15:00〜18:00）</option></select></label>
+        <label>電話番号<input id="contact-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" pattern="[0-9+() -]{10,20}" placeholder="090-1234-5678" required aria-describedby="phone-help" /></label>
+        <small id="phone-help" class="field-note">パスワード・暗証番号は入力しないでください。</small>
+        <label class="consent-check"><input id="privacy-consent" type="checkbox" required /><span>利用目的と、このデモでは送信・保存されないことを確認しました</span></label>
+        <button class="button button-primary button-full" value="default" type="submit">入力内容を確認する</button>
+        <small class="dialog-note">本番環境では、送信前にプライバシー通知と保存期間を再確認します。</small>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"><span>✓</span><p><strong>準備できました</strong><small>操作結果をここに表示します。</small></p></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
