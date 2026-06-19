@@ -3,6 +3,7 @@ const views = {
   diagnosis: document.querySelector("#diagnosis-view"),
   ledger: document.querySelector("#ledger-view"),
   support: document.querySelector("#support-view"),
+  guide: document.querySelector("#guide-view"),
   security: document.querySelector("#security-view"),
 };
 
@@ -58,6 +59,25 @@ function startDiagnosis(service) {
     });
   }
   setStep(1);
+}
+
+function selectGuide(topic) {
+  const safeTopic = ["ai", "phone", "video", "sim"].includes(topic) ? topic : "ai";
+  document.querySelectorAll("[data-guide-tab]").forEach((tab) => {
+    const selected = tab.dataset.guideTab === safeTopic;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+  document.querySelectorAll("[data-guide-panel]").forEach((panel) => {
+    const selected = panel.dataset.guidePanel === safeTopic;
+    panel.hidden = !selected;
+    panel.classList.toggle("is-active", selected);
+  });
+}
+
+function openGuide(topic) {
+  selectGuide(topic);
+  setActiveView("guide");
 }
 
 function showToast(title, message, type = "success") {
@@ -125,16 +145,38 @@ document.querySelectorAll("[data-view-link-button]").forEach((button) => {
 document.querySelectorAll("[data-service]").forEach((button) => {
   button.addEventListener("click", () => {
     const service = button.dataset.service;
-    if (service === "ai" || service === "trouble") {
+    if (service === "ai") {
+      openGuide("ai");
+      return;
+    }
+    if (service === "trouble") {
       setActiveView("support");
       showToast(
-        service === "ai" ? "AI活用相談をご案内します" : "お困りごとをお聞かせください",
+        "お困りごとをお聞かせください",
         "電話・訪問・LINEから相談方法を選べます。",
         "success",
       );
       return;
     }
     startDiagnosis(service);
+  });
+});
+
+document.querySelectorAll("[data-guide]").forEach((button) => {
+  button.addEventListener("click", () => openGuide(button.dataset.guide));
+});
+
+document.querySelectorAll("[data-guide-tab]").forEach((tab) => {
+  tab.addEventListener("click", () => selectGuide(tab.dataset.guideTab));
+  tab.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    const tabs = [...document.querySelectorAll("[data-guide-tab]")];
+    const currentIndex = tabs.indexOf(tab);
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextTab = tabs[(currentIndex + direction + tabs.length) % tabs.length];
+    selectGuide(nextTab.dataset.guideTab);
+    nextTab.focus();
+    event.preventDefault();
   });
 });
 
@@ -157,8 +199,13 @@ document.querySelector('[data-action="next-step"]').addEventListener("click", ()
     return;
   }
   if (!selected.some((value) => value === "phone" || value === "subscription")) {
-    setActiveView("support");
-    showToast("相談メニューをご案内します", "AIやスマホ・PCのお悩みは、スタッフが直接お聞きします。", "success");
+    if (selected.includes("ai")) {
+      openGuide("ai");
+      showToast("AI活用ガイドをご案内します", "最初からうまく使えなくても大丈夫です。", "success");
+    } else {
+      setActiveView("support");
+      showToast("相談メニューをご案内します", "スマホ・PCのお悩みは、スタッフが直接お聞きします。", "success");
+    }
     return;
   }
   setStep(2);

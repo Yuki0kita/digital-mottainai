@@ -166,6 +166,19 @@
             </button>
           </div>
 
+          <section class="guide-entry" aria-labelledby="guide-entry-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">選ぶ前に知っておきたいこと</p><h2 id="guide-entry-title">迷ったときの、やさしい選び方ガイド</h2></div>
+              <p>正解はひとつではありません。今の使い方に合う基準から考えます。</p>
+            </div>
+            <div class="guide-entry-grid">
+              <button type="button" data-guide="ai"><span class="guide-entry-icon">AI</span><strong>AIはどう育てる？</strong><small>導入・データ・教育の考え方</small><b aria-hidden="true">→</b></button>
+              <button type="button" data-guide="phone"><span class="guide-entry-icon"><img src="./assets/icons/smartphone_line.svg" alt="" /></span><strong>スマホはどう選ぶ？</strong><small>Android・iPhone・用途の違い</small><b aria-hidden="true">→</b></button>
+              <button type="button" data-guide="video"><span class="guide-entry-icon"><img src="./assets/icons/transactions_line.svg" alt="" /></span><strong>動画サービス比較</strong><small>作品・料金・使う期間で選ぶ</small><b aria-hidden="true">→</b></button>
+              <button type="button" data-guide="sim"><span class="guide-entry-icon">SIM</span><strong>格安SIMの選び方</strong><small>料金だけでなく電波やメールも確認</small><b aria-hidden="true">→</b></button>
+            </div>
+          </section>
+
           <section class="ledger-preview" aria-labelledby="ledger-preview-title">
             <div class="ledger-summary">
               <span class="section-icon" aria-hidden="true">¥</span>
@@ -234,6 +247,7 @@
                       <label>契約している会社<select id="carrier" name="carrier"><option value="major">大手キャリア</option><option value="sub">サブブランド</option><option value="mvno">格安SIM</option><option value="unknown">わからない</option></select></label>
                       <label>毎月の支払額<span class="money-input"><input id="phone-cost" name="phoneCost" type="number" min="0" max="100000" value="9800" inputmode="numeric" /><span>円</span></span></label>
                     </div>
+                    <div class="gentle-note"><span aria-hidden="true">i</span><p><strong>安さだけで決めなくて大丈夫</strong><small>お住まいの地域の電波、キャリアメールが必要なアプリ、店頭サポートも一緒に確認しましょう。</small></p><button class="text-link" type="button" data-guide="sim">格安SIMの選び方を見る</button></div>
                   </div>
                   <div class="input-section">
                     <div class="input-section-title"><span class="choice-icon">サ</span><div><strong>サブスク</strong><small>現在利用しているものを選択</small></div></div>
@@ -244,6 +258,7 @@
                       <label><input type="checkbox" value="3000" /><span class="service-badge">AI</span><span><strong>ChatGPT</strong><small>AI</small></span><b>3,000円/月</b></label>
                       <label><input type="checkbox" value="600" /><span class="service-badge">A</span><span><strong>Amazon Prime</strong><small>買い物・動画</small></span><b>600円/月</b></label>
                     </div>
+                    <div class="gentle-note"><span aria-hidden="true">i</span><p><strong>ずっと契約しなくても大丈夫</strong><small>見たい作品がある月だけ契約する方法もあります。解約日や再登録条件は各サービスで確認します。</small></p><button class="text-link" type="button" data-guide="video">動画サービスを比べる</button></div>
                   </div>
                   <div class="form-actions"><button class="button button-secondary" type="button" data-action="prev-step">← 戻る</button><button class="button button-primary" type="submit">診断結果を見る <span>→</span></button></div>
                 </fieldset>
@@ -296,6 +311,60 @@
             <button type="button" data-action="line"><span>ラ</span><strong>LINEで相談</strong><small>写真を送って相談できます</small><b>友だち追加</b><em>返信目安 30分以内</em></button>
           </div>
           <section class="support-topics"><div class="section-heading"><div><p class="eyebrow">よくあるご相談</p><h2>こんなこともお任せください</h2></div></div><div class="topic-grid"><div><span>Wi</span><strong>Wi-Fi診断</strong><small>遅さやつながりにくさを確認</small></div><div><span>線</span><strong>LINE整理</strong><small>引き継ぎやバックアップ</small></div><div><span>写</span><strong>写真整理</strong><small>GoogleフォトやiCloud</small></div><div><span>盾</span><strong>詐欺相談</strong><small>怪しいSMSやメールを判定</small></div><div><span>PC</span><strong>PC健康診断</strong><small>動作や容量をチェック</small></div><div><span>鍵</span><strong>パスワード整理</strong><small>安全な保管方法をご案内</small></div></div></section>
+        </section>
+
+        <section id="guide-view" class="view subpage-view guide-view" aria-labelledby="guide-title">
+          <button class="back-link" type="button" data-action="back-home">← ホームに戻る</button>
+          <header class="guide-header">
+            <p class="eyebrow">くらしのデジタル選び方ガイド</p>
+            <h1 id="guide-title">わからないまま、<br />決めなくて大丈夫です。</h1>
+            <p>良い・悪いではなく、あなたの使い方に合うかを一緒に考えます。</p>
+          </header>
+
+          <div class="guide-tabs" role="tablist" aria-label="ガイドの種類">
+            <button type="button" role="tab" aria-selected="true" aria-controls="guide-ai" data-guide-tab="ai"><span>AI</span>AI活用</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="guide-phone" data-guide-tab="phone"><span>携</span>スマホ</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="guide-video" data-guide-tab="video"><span>動</span>動画配信</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="guide-sim" data-guide-tab="sim"><span>SIM</span>格安SIM</button>
+          </div>
+
+          <section id="guide-ai" class="guide-panel is-active" role="tabpanel" data-guide-panel="ai">
+            <div class="reassurance-card"><span aria-hidden="true">育</span><div><p class="eyebrow">まず知ってほしいこと</p><h2>AIは、新人さんと同じ。<br />最初から完璧でなくて普通です。</h2><p>うまくいかない期間は失敗ではなく、得意・不得意を知るための「育成期間」です。</p></div></div>
+            <div class="guide-section-heading"><p class="eyebrow">導入の進め方</p><h2>小さく試して、少しずつ育てる</h2></div>
+            <ol class="ai-journey"><li><b>1</b><div><strong>ひとつの作業で試す</strong><p>文章の要約や定型文など、失敗しても戻せる作業から始めます。</p></div></li><li><b>2</b><div><strong>できた・できないを記録</strong><p>人が直した点を残すと、AIへの伝え方と任せられる範囲が見えてきます。</p></div></li><li><b>3</b><div><strong>手順を繰り返し教える</strong><p>最初は人の方が速くても大丈夫。指示と確認を重ねて自動化へ近づけます。</p></div></li></ol>
+            <div class="data-ready-card"><div><p class="eyebrow">現場への適用</p><h2>AIの前に、現場データを整える</h2><p>作業の状況を説明できるデータが、AI活用の土台になります。</p></div><ul><li><span>温</span>温度</li><li><span>天</span>天候</li><li><span>場</span>場所</li><li><span>人</span>作業者</li><li><span>作</span>作業内容</li></ul><div class="data-warning"><img src="./assets/icons/privacy_protection_line.svg" alt="" /><p><strong>個人情報・機密情報は、そのままAIへ入力しません</strong><small>利用を許可されたAIとデータ範囲を先に確認します。</small></p></div></div>
+            <div class="model-note"><span aria-hidden="true">i</span><div><h3>モデル名より、仕事との相性で選びます</h3><p>「Fable 5」「GPT-5.5」など新しい名称や性能比較が話題になっても、提供状況や利用制限は変わります。精度だけでなく、データの扱い、費用、速度、利用地域、サポートを確認しましょう。</p></div></div>
+            <div class="guide-cta"><div><h2>最初の1作業を一緒に選びませんか？</h2><p>自動化を急がず、現場で困っていることから整理します。</p></div><button class="button button-primary" type="button" data-action="open-contact">AI活用を相談する</button></div>
+          </section>
+
+          <section id="guide-phone" class="guide-panel" role="tabpanel" data-guide-panel="phone" hidden>
+            <div class="reassurance-card"><span aria-hidden="true">慣</span><div><p class="eyebrow">Android・iPhone</p><h2>使い慣れていることも、<br />大切な性能のひとつです。</h2><p>どちらが上ではありません。操作の慣れ、家族と同じ機種か、使いたいアプリから選びます。</p></div></div>
+            <div class="phone-choice-grid"><article><span>Android</span><h3>設定を自分好みにしたい</h3><ul><li>機種や価格帯の選択肢が多い</li><li>Galaxyなど機種ごとに操作感が違う</li><li>慣れるまで戻る操作などを確認</li></ul></article><article><span>iPhone</span><h3>家族と操作を合わせたい</h3><ul><li>身近な人に質問しやすいか確認</li><li>Apple Payの認証方法も試す</li><li>今のデータ移行方法を先に確認</li></ul></article></div>
+            <div class="iphone-guide"><div class="guide-section-heading"><p class="eyebrow">iPhone 17の考え方</p><h2>高性能が必要か、使い方から決める</h2></div><div class="iphone-options"><article><span class="security-level level-safe">多くの日常用途</span><h3>iPhone 17</h3><p>連絡、Web、動画、日常の写真が中心なら、まず標準モデルから検討。</p></article><article><span class="security-level level-care">撮影・大画面重視</span><h3>Pro / Pro Max</h3><p>望遠撮影、長時間の動画、大画面を重視する方向け。重さや予算も店頭で確認。</p></article></div><p class="freshness-note">機能・価格・在庫は変わるため、購入前に公式情報と実機で確認します。</p></div>
+            <div class="choice-checklist"><h2>買う前の5つの確認</h2><ol><li><b>1</b>片手で持てる重さですか？</li><li><b>2</b>文字を読みやすい大きさにできますか？</li><li><b>3</b>家族へ質問しやすい機種ですか？</li><li><b>4</b>写真・LINEの移行方法は決まっていますか？</li><li><b>5</b>店頭サポートは必要ですか？</li></ol></div>
+            <div class="guide-cta"><div><h2>実機を触りながら選べます</h2><p>今のスマホを見ながら、変えない選択も含めてご案内します。</p></div><button class="button button-primary" type="button" data-action="open-contact">スマホ選びを相談する</button></div>
+          </section>
+
+          <section id="guide-video" class="guide-panel" role="tabpanel" data-guide-panel="video" hidden>
+            <div class="reassurance-card"><span aria-hidden="true">観</span><div><p class="eyebrow">動画配信サービス</p><h2>全部を契約しなくて大丈夫。<br />見たい作品から選びましょう。</h2><p>作品数だけでなく、月額、家族で見るか、見たい期間を基準にします。</p></div></div>
+            <div class="table-wrap" tabindex="0" aria-label="動画配信サービス比較表。横にスクロールできます">
+              <table class="comparison-table"><thead><tr><th>サービス</th><th>選ぶときの目安</th><th>向いている見方</th></tr></thead><tbody>
+                <tr><th>Netflix</th><td>オリジナル作品</td><td>独自ドラマや映画を楽しみたい</td></tr><tr><th>Prime Video</th><td>プライム特典との組み合わせ</td><td>買い物など他の特典も使う</td></tr><tr><th>U-NEXT</th><td>幅広い作品ラインアップ</td><td>作品数を重視する</td></tr><tr><th>Disney+</th><td>ディズニー・マーベルなど</td><td>家族やブランド作品を楽しむ</td></tr><tr><th>Hulu</th><td>日テレ系・海外ドラマ</td><td>テレビ番組やドラマを見る</td></tr><tr><th>dアニメストア</th><td>アニメ特化</td><td>アニメを中心に見る</td></tr><tr><th>ABEMA</th><td>独自番組・チャンネル型</td><td>番組表から気軽に見る</td></tr><tr><th>Lemino</th><td>韓国ドラマなど</td><td>好きなジャンルを集中して見る</td></tr><tr><th>DMM TV</th><td>DMM関連特典</td><td>他のDMMサービスも使う</td></tr><tr><th>DAZN</th><td>スポーツ</td><td>試合や大会をライブで見る</td></tr>
+              </tbody></table>
+            </div>
+            <div class="subscription-rhythm"><div><p class="eyebrow">節約のヒント</p><h2>「見たい月だけ」も選択肢</h2><p>U-NEXTなど料金が高く感じる場合は、見たい作品がある期間だけ使う方法もあります。</p></div><ul><li>契約前に見たい作品があるか検索</li><li>無料期間と更新日をカレンダーへ記録</li><li>解約後に見られなくなる作品を確認</li><li>家族の重複契約を確認</li></ul></div>
+            <p class="freshness-note">配信作品・料金・無料期間は変わります。契約前に各サービスの公式情報をご確認ください。</p>
+            <div class="guide-cta"><div><h2>いまの契約を一緒に整理します</h2><p>見ていないサービスがわからなくても、明細から確認できます。</p></div><button class="button button-primary" type="button" data-action="start-diagnosis">サブスクを診断する</button></div>
+          </section>
+
+          <section id="guide-sim" class="guide-panel" role="tabpanel" data-guide-panel="sim" hidden>
+            <div class="reassurance-card"><span aria-hidden="true">波</span><div><p class="eyebrow">格安SIM</p><h2>安さだけで変えなくて大丈夫。<br />つながる安心も比べましょう。</h2><p>通信品質は地域や時間帯で変わります。生活する場所と必要なサポートから選びます。</p></div></div>
+            <div class="provider-list" aria-label="比較候補の通信サービス"><span>楽天モバイル</span><span>Y!mobile</span><span>povo</span><span>LINEMO</span><span>mineo</span><span>日本通信SIM</span><span>NURO Mobile</span><span>HIS Mobile</span></div>
+            <div class="sim-check-grid"><article><span>1</span><h3>電波とエリア</h3><p>自宅、職場、よく行く場所でのエリアと、利用者の声を確認。</p></article><article><span>2</span><h3>キャリアメール</h3><p>メールアドレスが銀行・行政・会員アプリに登録されていないか確認。</p></article><article><span>3</span><h3>データと通話</h3><p>直近3か月の使用量と、長電話・通話アプリの使い方を確認。</p></article><article><span>4</span><h3>困った時の窓口</h3><p>店舗、電話、チャットのどれが必要かを先に決める。</p></article></div>
+            <div class="switch-plan"><div class="guide-section-heading"><p class="eyebrow">失敗しにくい進め方</p><h2>変更前に、3つだけ準備</h2></div><ol><li><b>1</b><span><strong>メールの登録先を確認</strong><small>キャリアメールが必要なアプリを一覧にします。</small></span></li><li><b>2</b><span><strong>対応端末とSIMを確認</strong><small>eSIM・SIMカード、端末の対応状況を公式ページで確認します。</small></span></li><li><b>3</b><span><strong>大切なデータをバックアップ</strong><small>連絡先、写真、LINEの引き継ぎを先に済ませます。</small></span></li></ol></div>
+            <p class="freshness-note">料金・キャンペーン・通信エリアは変更されます。契約前に公式情報と重要事項説明を確認します。</p>
+            <div class="guide-cta"><div><h2>変えた方がよいかから相談できます</h2><p>今のままが安心なら、無理に変更をおすすめしません。</p></div><button class="button button-primary" type="button" data-action="open-contact">料金プランを相談する</button></div>
+          </section>
         </section>
 
         <section id="security-view" class="view subpage-view security-view" aria-labelledby="security-title">
