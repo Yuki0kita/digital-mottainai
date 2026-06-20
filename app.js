@@ -4,7 +4,6 @@ const views = {
   ledger: document.querySelector("#ledger-view"),
   support: document.querySelector("#support-view"),
   guide: document.querySelector("#guide-view"),
-  security: document.querySelector("#security-view"),
 };
 
 const contactDialog = document.querySelector("#contact-dialog");
@@ -228,30 +227,13 @@ document.querySelectorAll('[data-action="print-report"]').forEach((button) => {
 });
 
 document.querySelector('[data-action="call"]').addEventListener("click", () => {
-  showToast("お電話で受け付けています", "0120-123-889（9:00〜18:00）", "success");
-});
-
-document.querySelector('[data-action="line"]').addEventListener("click", () => {
-  showToast("LINE相談の準備ができました", "実サービスでは友だち追加画面へ移動します。", "success");
+  window.location.href = "tel:0120123889";
 });
 
 document.querySelector("#contact-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  const phone = document.querySelector("#contact-phone");
-  const consent = document.querySelector("#privacy-consent");
-  if (!phone.validity.valid) {
-    phone.focus();
-    showToast("電話番号をご確認ください", "10〜20文字の数字・記号で入力してください。", "error");
-    return;
-  }
-  if (!consent.checked) {
-    consent.focus();
-    showToast("確認へのチェックが必要です", "データの利用目的をご確認ください。", "error");
-    return;
-  }
   contactDialog.close();
-  showToast("入力内容を確認しました（デモ）", "データは送信・保存されていません。", "success");
-  event.currentTarget.reset();
+  window.location.href = "tel:0120123889";
 });
 
 contactDialog.addEventListener("click", (event) => {
@@ -276,5 +258,5 @@ try {
   localStorage.removeItem("kurashiDxLatestSaving");
   localStorage.removeItem("kurashiDxDiagnosedAt");
 } catch (error) {
-  // Legacy demo data cleanup is best-effort only.
+  // 古い端末内データが残っている場合だけ削除します。
 }
